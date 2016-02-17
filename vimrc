@@ -84,14 +84,14 @@ catch
 endtry
 
 set background=light
-set t_Co=256
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
     set guioptions-=e
     set guitablabel=%M\ %t
+    set t_Co=256
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -229,9 +229,12 @@ let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " Airline
 let g:airline_theme = "solarized"
+let g:airline#extensions#tabline#tab_nr_type = 1
+" Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_powerline_fonts = 1
 
 " Surround plugin
 vmap Si S(i_<esc>f)
