@@ -239,6 +239,4 @@ let g:airline_powerline_fonts = 1
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
-" Git Gutter
-
 source ~/.vim/filetypes.vim
