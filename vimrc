@@ -1,3 +1,13 @@
+" Good Habits
+" disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" pathogen
+execute pathogen#infect()
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -69,29 +79,22 @@ set t_vb=
 set tm=500
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=0
 set so=4
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable 
 
-try
-    colorscheme solarized
-catch
-endtry
-
+colorscheme solarized
 set background=light
 " let g:solarized_termcolors=256
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set guitablabel=%M\ %t
-    set t_Co=256
+	set guioptions=0
+	set guitablabel=%M\ %t
+	set t_Co=256
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 13
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -149,9 +152,9 @@ map 0 ^
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
+	exe "normal mz"
+	%s/\s\+$//ge
+	exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
@@ -159,7 +162,7 @@ autocmd BufWrite *.java :call DeleteTrailingWS()
 
 " Make VIM remember position in file after reopen
 if has("autocmd")
-   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 set relativenumber
@@ -174,17 +177,13 @@ map <F6> :%s/ *$//g<CR>:w<CR>:nohl<CR>
 " Plugins related config
 " ===================================
 
-" pathogen
-execute pathogen#infect()
-
-
 " nerdtree
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_open_on_gui_startup=1
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
+let g:NERDTreeWinSize=25
 map <leader>nn :NERDTreeTabsToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeTabsFind<cr>
