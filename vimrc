@@ -69,8 +69,8 @@ set t_vb=
 set tm=500
 
 " Add a bit extra margin to the left
-" set foldcolumn=1
-
+set foldcolumn=1
+set so=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -85,6 +85,7 @@ endtry
 
 set background=light
 set t_Co=256
+let g:solarized_termcolors=256
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -227,8 +228,10 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " Airline
-let g:airline_powerline_fonts = 1
 let g:airline_theme = "solarized"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Surround plugin
 vmap Si S(i_<esc>f)
