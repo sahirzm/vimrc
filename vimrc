@@ -85,9 +85,8 @@ set so=4
 " Enable syntax highlighting
 syntax enable 
 
-colorscheme solarized
-set background=light
-" let g:solarized_termcolors=256
+colorscheme Tomorrow-Night-Eighties
+set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -95,6 +94,8 @@ if has("gui_running")
 	set guitablabel=%M\ %t
 	set t_Co=256
 	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 13
+else
+	let g:solarized_termcolors=256
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -227,7 +228,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " Airline
-let g:airline_theme = "solarized"
+let g:airline_theme = "tomorrow"
 let g:airline#extensions#tabline#tab_nr_type = 1
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
