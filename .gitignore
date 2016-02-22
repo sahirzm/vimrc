@@ -1,3 +1,8 @@
 .netrwhist
 .DS_Store
-temp_dirs/yankring_history_v2.txt
+!temp_dirs/\.gitkeep
+temp_dirs/*
+bundle/YankRing.vim
+bundle/bufexplorer.zip
+bundle/taglist.vim
+bundle/vim-expand-region
