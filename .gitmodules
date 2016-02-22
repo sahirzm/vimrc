@@ -82,3 +82,6 @@
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "bundle/JavaImp"]
+	path = bundle/JavaImp
+	url = git@github.com:rustushki/JavaImp.vim.git

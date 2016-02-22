@@ -240,4 +240,9 @@ let g:airline_powerline_fonts = 1
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
+" JavaImp
+let g:JavaImpDataDir = $HOME . "/.vim/temp_dirs/JavaImp"
+let g:JavaImpPaths =
+   \ $HOME . "/data/workspace/gasjobber-server/src/main/java," .
+   \ $HOME . "/.vim/temp_dirs/JavaImp/jmplst"
 source ~/.vim/filetypes.vim
