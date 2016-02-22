@@ -2,7 +2,3 @@
 .DS_Store
 !temp_dirs/\.gitkeep
 temp_dirs/*
-bundle/YankRing.vim
-bundle/bufexplorer.zip
-bundle/taglist.vim
-bundle/vim-expand-region
