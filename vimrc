@@ -94,8 +94,6 @@ if has("gui_running")
 	set guitablabel=%M\ %t
 	set t_Co=256
 	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 13
-else
-	let g:solarized_termcolors=256
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -131,6 +129,7 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 set colorcolumn=120
+set cursorline
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -138,6 +137,9 @@ map k gk
 
 syntax on
 filetype plugin indent on
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -180,8 +182,8 @@ map <F6> :%s/ *$//g<CR>:w<CR>:nohl<CR>
 " ===================================
 
 " nerdtree
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_open_on_gui_startup=1
+let g:nerdtree_tabs_open_on_console_startup=0
+let g:nerdtree_tabs_open_on_gui_startup=0
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
@@ -244,7 +246,10 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 " JavaImp
 let g:JavaImpDataDir = $HOME . "/.vim/temp_dirs/JavaImp"
 let g:JavaImpPaths = $HOME . "/.vim/temp_dirs/JavaImp," .
-   \ $HOME . "/data/workspace/gasjobber-server/src/main/java," .
-   \ $HOME . "/data/workspace/gasjobber-server/target/jarfiles," .
-   \ $HOME . "/.vim/temp_dirs/JavaImp/jmplst,"
+			\ $HOME . "/data/workspace/gasjobber-server/src/main/java," .
+			\ $HOME . "/data/workspace/gasjobber-server/target/jarfiles," .
+			\ $HOME . "/.vim/temp_dirs/JavaImp/jmplst,"
 source ~/.vim/filetypes.vim
+
+" IndentLine
+set list lcs=tab:>-,trail:<
