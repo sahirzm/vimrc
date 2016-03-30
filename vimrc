@@ -85,16 +85,16 @@ set so=4
 " Enable syntax highlighting
 syntax enable
 
-colorscheme Tomorrow-Night-Eighties
-set background=dark
-
+set t_Co=256
 " Set extra options when running in GUI mode
 if has("gui_running")
 	set guioptions=0
 	set guitablabel=%M\ %t
-	set t_Co=256
 	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 13
 endif
+
+colorscheme Tomorrow-Night-Eighties
+set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
