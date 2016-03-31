@@ -90,7 +90,7 @@ set t_Co=256
 if has("gui_running")
 	set guioptions=0
 	set guitablabel=%M\ %t
-	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 13
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 13
 endif
 
 colorscheme Tomorrow-Night-Eighties
