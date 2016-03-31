@@ -92,8 +92,7 @@ set background=dark
 if has("gui_running")
 	set guioptions=0
 	set guitablabel=%M\ %t
-	set t_Co=256
-	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 13
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 13
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
