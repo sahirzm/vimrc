@@ -52,17 +52,18 @@ export UPDATE_ZSH_DAYS=30
 plugins=(git)
 
 # User configuration
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 export JAVA_HOME="/home/sahir/data/ide/jdk1.8.0_60"
 export GRADLE_HOME="/home/sahir/data/ide/gradle-2.12"
-export PATH="/home/sahir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="$PATH:/home/sahir/.local/bin"
 export EDITOR=vim
 export M2_HOME="/home/sahir/data/ide/apache-maven-3.3.3"
 export PATH="$JAVA_HOME/bin:$M2_HOME/bin:$PATH"
 export PATH="$GRADLE_HOME/bin:$PATH:/home/sahir/data/ide/groovy-2.4.6/bin"
 export WORKON_HOME=~/data/venvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/bin/virtualenvwrapper.sh
+source /home/sahir/.local/bin/virtualenvwrapper.sh
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
