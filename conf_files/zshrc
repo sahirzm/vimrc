@@ -53,6 +53,7 @@ plugins=(git)
 
 # User configuration
 export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/sahir/data/ide/node-v5.11.0-linux-x64/bin:$PATH"
 
 export JAVA_HOME="$HOME/data/ide/jdk1.8.0_60"
 export GRADLE_HOME="$HOME/data/ide/gradle-2.12"
@@ -99,5 +100,6 @@ source $ZSH/oh-my-zsh.sh
 alias vi=vim
 alias tmuxn='tmux new-session -s'
 alias mvntest='mvn test -Parq-wildfly-remote'
+alias sshpi='ssh sahir@192.168.0.111'
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
