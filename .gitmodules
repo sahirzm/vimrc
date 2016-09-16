@@ -88,3 +88,6 @@
 [submodule "bundle/vim-fugitive.git"]
 	path = bundle/vim-fugitive.git
 	url = git@github.com:tpope/vim-fugitive.git
+[submodule "bundle/JavaImp.vim--Lee"]
+	path = bundle/JavaImp.vim--Lee
+	url = https://github.com/vim-scripts/JavaImp.vim--Lee
