@@ -172,7 +172,7 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-set relativenumber
+" set relativenumber
 set number
 
 " use this to change case of first char or previous word
@@ -256,6 +256,7 @@ let g:JavaImpPaths = $HOME . "/.vim/temp_dirs/JavaImp," .
 			\ $HOME . "/data/workspace/gasjobber-server/target/jarfiles," .
 			\ $HOME . "/.vim/temp_dirs/JavaImp/jmplst,"
 source ~/.vim/filetypes.vim
+map <leader>i :JavaImp<cr>:JIS<cr>
 
 " IndentLine
 set list lcs=tab:>-,trail:<

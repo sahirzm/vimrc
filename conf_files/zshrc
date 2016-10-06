@@ -103,6 +103,7 @@ alias vi=vim
 alias tmuxn='tmux new-session -s'
 alias mvntest='mvn test -Parq-wildfly-remote'
 alias sshpi='ssh sahir@192.168.0.111'
+alias mvncc='mvn clean compile'
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 source /home/sahir/.phpbrew/bashrc
