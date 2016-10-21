@@ -26,6 +26,6 @@ execute("sudo sh -c 'echo \"deb http://dl.google.com/linux/chrome/deb/ stable ma
 #updating and installation
 execute("sudo apt-get update")
 execute("sudo apt-get -y upgrade")
-execute("sudo apt-get -y install apache2 php5 mysql-server mysql-workbench postgresql ubuntu-restricted-extras php5-cgi php5-cli php5-common php5-curl php5-gd php5-imagick php5-memcache php5-mysql php5-pgsql php5-xdebug php5-xmlrpc php5-xsl php-apc php-mail vim libapache2-mod-php5 git git-core ssh gimp dia inkscape skype audacity shutter axel deluge openshot vlc filezilla agave alacarte p7zip p7zip-full p7zip-rar audacious meld google-chrome-stable curl exuberant-ctags build-essential libssl-dev vim tmux")
+execute("sudo apt-get -y install apache2 mysql-server mysql-workbench postgresql ubuntu-restricted-extras vim git git-core ssh gimp dia inkscape skype audacity shutter axel deluge vlc filezilla p7zip p7zip-full p7zip-rar audacious meld google-chrome-stable curl exuberant-ctags build-essential libssl-dev vim tmux zsh python3-pip")
 execute("gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3")
 execute("\curl -sSL https://get.rvm.io | bash -s stable --rails")

@@ -11,3 +11,6 @@ for l in f:
     print(n[len(n) - 1] + ' ' + l.replace('/', '.'))
 
 f.close()
+
+
+# jar tf $JAVA_HOME/src.jar | sed -e 's#^src/##' > $HOME/.vim/temp_dirs/JavaImp/jdk.jmplst
