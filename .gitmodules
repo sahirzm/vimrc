@@ -94,3 +94,12 @@
 [submodule "bundle/gruvbox"]
 	path = bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "bundle/vim-java-get-set.git"]
+	path = bundle/vim-java-get-set.git
+	url = https://github.com/Dinduks/vim-java-get-set.git
+[submodule "bundle/vim-java-get-set"]
+	path = bundle/vim-java-get-set
+	url = https://github.com/Dinduks/vim-java-get-set.git
+[submodule "bundle/vim-closetag.git"]
+	path = bundle/vim-closetag.git
+	url = https://github.com/alvan/vim-closetag.git
