@@ -1,0 +1,20 @@
+export PATH="$HOME/.local/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/sahir/data/ide/node-v5.11.0-linux-x64/bin:$PATH"
+
+export JAVA_HOME="$HOME/data/ide/jdk1.8.0_60"
+export GRADLE_HOME="$HOME/data/ide/gradle-2.12"
+export PATH="$PATH:$HOME/.local/bin"
+export EDITOR=vim
+export M2_HOME="$HOME/data/ide/apache-maven-3.3.3"
+export PATH="$JAVA_HOME/bin:$M2_HOME/bin:$PATH"
+export PATH="$GRADLE_HOME/bin:$PATH:$HOME/data/ide/groovy-2.4.6/bin"
+export WORKON_HOME=~/data/venvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source $HOME/.local/bin/virtualenvwrapper.sh
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+source /home/sahir/.phpbrew/bashrc
