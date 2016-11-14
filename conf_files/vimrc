@@ -276,3 +276,6 @@ map <leader>wc :!mvn clean compile<cr>
 
 " autoclose html tags
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.xml"
+
+" disable bell
+set belloff=all

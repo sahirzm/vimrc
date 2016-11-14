@@ -103,3 +103,9 @@
 [submodule "bundle/html5.vim"]
 	path = bundle/html5.vim
 	url = https://github.com/othree/html5.vim.git
+[submodule "bundle/YouCompleteMe.git"]
+	path = bundle/YouCompleteMe.git
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/vim-multiple-cursors.git"]
+	path = bundle/vim-multiple-cursors.git
+	url = https://github.com/terryma/vim-multiple-cursors.git
