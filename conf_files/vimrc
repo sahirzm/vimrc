@@ -8,6 +8,9 @@ noremap <Right> <NOP>
 " pathogen
 execute pathogen#infect()
 
+
+set nocompatible
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -93,9 +96,10 @@ if has("gui_running")
 	set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 13
 endif
 
-" colorscheme Tomorrow-Night-Eighties
-colorscheme gruvbox
 set background=dark
+" colorscheme Tomorrow-Night-Eighties
+" colorscheme gruvbox
+colorscheme dracula
 " colorscheme solarized
 " set background=light
 
@@ -120,9 +124,9 @@ set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=4
-set tabstop=4
+set tabstop=8
 set softtabstop=4
-set noexpandtab
+set expandtab
 
 " Linebreak on 500 characters
 set lbr
@@ -179,7 +183,7 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" set relativenumber
+set relativenumber
 set number
 
 " use this to change case of first char or previous word
@@ -205,14 +209,15 @@ map <leader>nf :NERDTreeTabsFind<cr>
 
 " delimitMate
 let g:delimitMate_expand_cr = 1
-let g:delimitMate_autoclose = 0
+let g:delimitMate_autoclose = 1
 
 " indentLine
 " vertical line indentation
 let g:indentLine_enabled = 1
 let g:indentLine_color_term = 10
-"let g:indentLine_color_gui = '#09AA08'
+" let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '|'
+" set list lcs=tab:\|.trail:<
 
 " YankRing
 let g:yankring_history_dir = '~/.vim/temp_dirs/'
@@ -243,7 +248,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " Airline
-let g:airline_theme = "gruvbox"
+" let g:airline_theme = "gruvbox"
 " let g:airline_theme = "tomorrow"
 " let g:airline_theme = "solarized"
 let g:airline#extensions#tabline#tab_nr_type = 1
@@ -267,8 +272,6 @@ source ~/.vim/filetypes.vim
 map <leader>i :JavaImp<cr>:JIS<cr>
 map <leader>gs :InsertBothGetterSetter<cr>
 
-" IndentLine
-set list lcs=tab:>-,trail:<
 
 " deploy to wildfly
 map <leader>wd :!mvn wildfly:deploy<cr>
@@ -279,3 +282,10 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.xml"
 
 " disable bell
 set belloff=all
+
+"YCM settings
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" supertab
+let g:SuperTabClosePreviewOnPopupClose = 1
