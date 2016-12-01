@@ -124,7 +124,7 @@ set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=4
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set expandtab
 
@@ -284,6 +284,10 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.xml"
 set belloff=all
 
 "YCM settings
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
