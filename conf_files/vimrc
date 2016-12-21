@@ -103,6 +103,8 @@ colorscheme dracula
 " colorscheme solarized
 " set background=light
 
+syntax on
+filetype plugin indent on
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -135,7 +137,8 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-set colorcolumn=120
+set colorcolumn=81
+highlight ColorColumn ctermbg=magenta guibg=Magenta
 " created problem in vimdiff
 " set cursorline
 
@@ -143,8 +146,6 @@ set colorcolumn=120
 map j gj
 map k gk
 
-syntax on
-filetype plugin indent on
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
@@ -214,7 +215,7 @@ let g:delimitMate_autoclose = 1
 " indentLine
 " vertical line indentation
 let g:indentLine_enabled = 1
-let g:indentLine_color_term = 10
+let g:indentLine_color_term = 1
 " let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '|'
 " set list lcs=tab:\|.trail:<
@@ -235,14 +236,14 @@ let g:ctrlp_map = '<c-f>'
 map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|target'
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|target\|dist'
 
 " Zencoding
 let g:user_emmet_mode='a'    "enable all function in all mode.
 
 " Syntastic
 " Python
-let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_python_checkers=['pylint']
 " Javascript
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
@@ -293,3 +294,16 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " supertab
 let g:SuperTabClosePreviewOnPopupClose = 1
+
+" conceal characters for javascript
+"set conceallevel=1
+"let g:javascript_conceal_function             = "ƒ"
+"let g:javascript_conceal_null                 = "ø"
+"let g:javascript_conceal_this                 = "@"
+"let g:javascript_conceal_return               = "⇚"
+"let g:javascript_conceal_undefined            = "¿"
+"let g:javascript_conceal_NaN                  = "ℕ"
+"let g:javascript_conceal_prototype            = "¶"
+"let g:javascript_conceal_static               = "•"
+"let g:javascript_conceal_super                = "Ω"
+"let g:javascript_conceal_arrow_function       = "⇒"
