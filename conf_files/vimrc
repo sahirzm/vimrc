@@ -214,7 +214,7 @@ let g:delimitMate_autoclose = 1
 
 " indentLine
 " vertical line indentation
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 let g:indentLine_color_term = 1
 " let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '|'
@@ -283,6 +283,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.xml"
 
 " disable bell
 set belloff=all
+set mouse=
 
 "YCM settings
 if !exists("g:ycm_semantic_triggers")
@@ -296,7 +297,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " conceal characters for javascript
-"set conceallevel=1
 "let g:javascript_conceal_function             = "ƒ"
 "let g:javascript_conceal_null                 = "ø"
 "let g:javascript_conceal_this                 = "@"
