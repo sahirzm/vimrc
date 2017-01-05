@@ -215,9 +215,9 @@ let g:delimitMate_autoclose = 1
 " indentLine
 " vertical line indentation
 let g:indentLine_enabled = 0
-let g:indentLine_color_term = 1
+let g:indentLine_color_term = 4
 " let g:indentLine_color_gui = '#09AA08'
-let g:indentLine_char = '|'
+let g:indentLine_char = '┆'
 " set list lcs=tab:\|.trail:<
 
 " YankRing
