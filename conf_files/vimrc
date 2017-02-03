@@ -97,9 +97,10 @@ if has("gui_running")
 endif
 
 set background=dark
-" colorscheme Tomorrow-Night-Eighties
+" colorscheme desert
+colorscheme Tomorrow-Night-Eighties
 " colorscheme gruvbox
-colorscheme dracula
+" colorscheme dracula
 " colorscheme solarized
 " set background=light
 
@@ -170,14 +171,14 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-autocmd BufWrite *.java :call DeleteTrailingWS()
-autocmd BufWrite *.js :call DeleteTrailingWS()
-autocmd BufWrite *.css :call DeleteTrailingWS()
-autocmd BufWrite *.html :call DeleteTrailingWS()
-autocmd BufWrite *.scss :call DeleteTrailingWS()
-autocmd BufWrite *.php :call DeleteTrailingWS()
-autocmd BufWrite *.phtml :call DeleteTrailingWS()
-autocmd BufWrite *.less :call DeleteTrailingWS()
+" autocmd BufWrite *.java :call DeleteTrailingWS()
+" autocmd BufWrite *.js :call DeleteTrailingWS()
+" autocmd BufWrite *.css :call DeleteTrailingWS()
+" autocmd BufWrite *.html :call DeleteTrailingWS()
+" autocmd BufWrite *.scss :call DeleteTrailingWS()
+" autocmd BufWrite *.php :call DeleteTrailingWS()
+" autocmd BufWrite *.phtml :call DeleteTrailingWS()
+" autocmd BufWrite *.less :call DeleteTrailingWS()
 
 " Make VIM remember position in file after reopen
 if has("autocmd")
