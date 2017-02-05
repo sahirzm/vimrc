@@ -248,6 +248,8 @@ let g:syntastic_python_checkers=['pylint']
 " Javascript
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+" Java
+let g:syntastic_java_checkstyle_classpath = [$HOME . '/.vim/temp_dirs']
 
 " Airline
 " let g:airline_theme = "gruvbox"
