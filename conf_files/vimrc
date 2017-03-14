@@ -281,6 +281,8 @@ map <leader>gs :InsertBothGetterSetter<cr>
 map <leader>wd :!mvn wildfly:deploy<cr>
 map <leader>wc :!mvn clean compile<cr>
 
+" remove search highlight
+map <leader>nh :nohl<cr>
 " autoclose html tags
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.xml"
 
