@@ -103,9 +103,6 @@
 [submodule "bundle/html5.vim"]
 	path = bundle/html5.vim
 	url = https://github.com/othree/html5.vim.git
-[submodule "bundle/YouCompleteMe.git"]
-	path = bundle/YouCompleteMe.git
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/vim-multiple-cursors.git"]
 	path = bundle/vim-multiple-cursors.git
 	url = https://github.com/terryma/vim-multiple-cursors.git
@@ -121,3 +118,12 @@
 [submodule "bundle/yats.vim"]
 	path = bundle/yats.vim
 	url = https://github.com/HerringtonDarkholme/yats.vim.git
+[submodule "bundle/vim-jsx.git"]
+	path = bundle/vim-jsx.git
+	url = https://github.com/mxw/vim-jsx.git
+[submodule "bundle/vim-javacomplete2.git"]
+	path = bundle/vim-javacomplete2.git
+	url = https://github.com/artur-shaik/vim-javacomplete2.git
+[submodule "bundle/neocomplete.vim.git"]
+	path = bundle/neocomplete.vim.git
+	url = https://github.com/Shougo/neocomplete.vim.git

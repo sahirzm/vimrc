@@ -212,6 +212,7 @@ map <leader>nf :NERDTreeTabsFind<cr>
 " delimitMate
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_autoclose = 1
+let g:delimitMate_excluded_ft = 'mail,xml,html,phtml'
 
 " indentLine
 " vertical line indentation
@@ -291,15 +292,24 @@ set belloff=all
 set mouse=
 
 "YCM settings
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+"if !exists("g:ycm_semantic_triggers")
+"  let g:ycm_semantic_triggers = {}
+"endif
+"let g:ycm_semantic_triggers['typescript'] = ['.']
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " supertab
 let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " conceal characters for javascript
 "let g:javascript_conceal_function             = "ƒ"
@@ -312,3 +322,5 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 "let g:javascript_conceal_static               = "•"
 "let g:javascript_conceal_super                = "Ω"
 "let g:javascript_conceal_arrow_function       = "⇒"
+
+let g:jsx_ext_required = 0
