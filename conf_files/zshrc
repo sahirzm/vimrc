@@ -85,11 +85,15 @@ source $ZSH/oh-my-zsh.sh
 #
 alias vi=vim
 alias tmuxn='tmux new-session -s'
+alias tmuxa='tmux attach-session -t'
+alias tmuxl='tmux list-session'
 alias mvntest='clear && mvn test -Parq-wildfly-remote'
 alias sshpi='ssh pi@192.168.0.18'
 alias mvncc='clear && mvn clean compile'
 alias mvnd='clear && mvn wildfly:deploy'
 alias cls='tput cup 15 0'
+alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
+alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 
 export PATH="$HOME/.local/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
