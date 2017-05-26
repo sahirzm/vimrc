@@ -95,7 +95,7 @@ alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
 alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 
-export PATH="$HOME/.local/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/snap/bin:$HOME/.local/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 export JAVA_HOME="$HOME/data/ide/jdk1.8.0_60"
 export GRADLE_HOME="$HOME/data/ide/gradle-2.12"

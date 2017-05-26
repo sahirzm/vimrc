@@ -127,3 +127,6 @@
 [submodule "bundle/neocomplete.vim.git"]
 	path = bundle/neocomplete.vim.git
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "bundle/vim-move.git"]
+	path = bundle/vim-move.git
+	url = git@github.com:matze/vim-move.git
