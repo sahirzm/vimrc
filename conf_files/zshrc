@@ -119,3 +119,7 @@ export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
     fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/sahir/.sdkman"
+[[ -s "/home/sahir/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sahir/.sdkman/bin/sdkman-init.sh"
