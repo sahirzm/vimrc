@@ -12,11 +12,8 @@ alias sshpi='ssh sahir@192.168.0.111'
 alias mvncc='mvn clean compile'
 alias mvnd='mvn wildfly:deploy'
 
-export PATH="/home/data/.local/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin"
-
-export JAVA_HOME="/home/data/tools/sdkman/candidates/java/current/"
-export M2_HOME="/home/data/tools/sdkman/candidates/maven/current/"
+export JAVA_HOME="/home/data/tools/sdkman/candidates/java/current"
+export M2_HOME="/home/data/tools/sdkman/candidates/maven/current"
 export EDITOR=vim
 export WORKON_HOME=/home/data/venvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -28,6 +25,9 @@ alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
 alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 
+
+export PATH="$JAVA_HOME/bin:$M2_HOME/bin:/home/data/tools/local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Random cowsay with fortune
 #if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
@@ -48,3 +48,10 @@ export NVM_DIR="/home/data/tools/nvm"
 export SDKMAN_DIR="/home/data/tools/sdkman"
 [[ -s "/home/data/tools/sdkman/bin/sdkman-init.sh" ]] && source "/home/data/tools/sdkman/bin/sdkman-init.sh"
 
+source /home/sahir/.phpbrew/bashrc
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/data/tools/google-cloud-sdk/path.bash.inc' ]; then source '/home/data/tools/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/data/tools/google-cloud-sdk/completion.bash.inc' ]; then source '/home/data/tools/google-cloud-sdk/completion.bash.inc'; fi
