@@ -97,9 +97,6 @@
 [submodule "bundle/vim-java-get-set"]
 	path = bundle/vim-java-get-set
 	url = https://github.com/Dinduks/vim-java-get-set.git
-[submodule "bundle/vim-closetag.git"]
-	path = bundle/vim-closetag.git
-	url = https://github.com/alvan/vim-closetag.git
 [submodule "bundle/html5.vim"]
 	path = bundle/html5.vim
 	url = https://github.com/othree/html5.vim.git
