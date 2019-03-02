@@ -93,16 +93,17 @@ set t_Co=256
 if has("gui_running")
 	set guioptions=0
 	set guitablabel=%M\ %t
-	set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 13
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 12
 endif
 
 set background=dark
+" set background=light
 " colorscheme desert
 " colorscheme Tomorrow-Night-Eighties
 " colorscheme gruvbox
-" colorscheme dracula
-" set background=light
-colorscheme solarized
+colorscheme dracula
+" colorscheme solarized
+" colorscheme onedark
 
 syntax on
 filetype plugin indent on
@@ -138,8 +139,8 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-set colorcolumn=81
-highlight ColorColumn ctermbg=magenta guibg=Magenta
+set colorcolumn=121
+highlight ColorColumn ctermbg=cyan guibg=cyan
 " created problem in vimdiff
 " set cursorline
 
@@ -171,14 +172,14 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-" autocmd BufWrite *.java :call DeleteTrailingWS()
-" autocmd BufWrite *.js :call DeleteTrailingWS()
-" autocmd BufWrite *.css :call DeleteTrailingWS()
-" autocmd BufWrite *.html :call DeleteTrailingWS()
-" autocmd BufWrite *.scss :call DeleteTrailingWS()
-" autocmd BufWrite *.php :call DeleteTrailingWS()
-" autocmd BufWrite *.phtml :call DeleteTrailingWS()
-" autocmd BufWrite *.less :call DeleteTrailingWS()
+autocmd BufWrite *.java :call DeleteTrailingWS()
+autocmd BufWrite *.js :call DeleteTrailingWS()
+autocmd BufWrite *.css :call DeleteTrailingWS()
+autocmd BufWrite *.html :call DeleteTrailingWS()
+autocmd BufWrite *.scss :call DeleteTrailingWS()
+autocmd BufWrite *.php :call DeleteTrailingWS()
+autocmd BufWrite *.phtml :call DeleteTrailingWS()
+autocmd BufWrite *.less :call DeleteTrailingWS()
 
 " Make VIM remember position in file after reopen
 if has("autocmd")
@@ -219,8 +220,8 @@ au FileType xml,html,phtml,php,xhtml,js let b:delimitMate_matchpairs = "(:),[:],
 " vertical line indentation
 let g:indentLine_enabled = 0
 let g:indentLine_color_term = 4
-" let g:indentLine_color_gui = '#09AA08'
-let g:indentLine_char = '┆'
+" let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_char = '⎸'
 " set list lcs=tab:\|.trail:<
 
 " YankRing
@@ -257,7 +258,8 @@ let g:syntastic_java_checkstyle_classpath = [$HOME . '/.vim/temp_dirs']
 " Airline
 " let g:airline_theme = "gruvbox"
 " let g:airline_theme = "tomorrow"
-let g:airline_theme = "solarized"
+" let g:airline_theme = "solarized"
+let g:airline_theme = "base16"
 let g:airline#extensions#tabline#tab_nr_type = 1
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -289,6 +291,9 @@ map <leader>nh :nohl<cr>
 
 " autoclose html tags
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.xml"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
 
 " disable bell
 set belloff=all
@@ -308,8 +313,6 @@ let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
 " supertab
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -317,14 +320,14 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " conceal characters for javascript
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
-"let g:javascript_conceal_this                 = "@"
-"let g:javascript_conceal_return               = "⇚"
-"let g:javascript_conceal_undefined            = "¿"
-"let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
 let g:javascript_conceal_prototype            = "¶"
 let g:javascript_conceal_static               = "•"
 let g:javascript_conceal_super                = "Ω"
-"let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_arrow_function       = "⇒"
 
 let g:jsx_ext_required = 0
 
@@ -350,4 +353,18 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+" vim-move
 let g:move_key_modifier = 'C'
+
+" vim-jsbeautify
+map <leader>bb :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <leader>bb :call JsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <leader>bb :call JsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <leader>bb :call JsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <leader>bb :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <leader>bb :call CSSBeautify()<cr>

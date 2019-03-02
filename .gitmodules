@@ -121,12 +121,21 @@
 [submodule "bundle/vim-jsx.git"]
 	path = bundle/vim-jsx.git
 	url = https://github.com/mxw/vim-jsx.git
-[submodule "bundle/vim-javacomplete2.git"]
-	path = bundle/vim-javacomplete2.git
-	url = https://github.com/artur-shaik/vim-javacomplete2.git
 [submodule "bundle/neocomplete.vim.git"]
 	path = bundle/neocomplete.vim.git
 	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "bundle/vim-move.git"]
 	path = bundle/vim-move.git
 	url = https://github.com/matze/vim-move.git
+[submodule "bundle/vim-jsbeautify.git"]
+	path = bundle/vim-jsbeautify.git
+	url = https://github.com/maksimr/vim-jsbeautify.git
+[submodule "bundle/onedark.vim"]
+	path = bundle/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "bundle/editorconfig-vim.git"]
+	path = bundle/editorconfig-vim.git
+	url = https://github.com/editorconfig/editorconfig-vim.git
