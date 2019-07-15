@@ -5,9 +5,9 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 #ZSH_THEME="dpoggi"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,7 +56,10 @@ plugins=(emacs
         docker
         git-flow
         gradle
-        yarn)
+        yarn
+        kubectl
+        minikube
+        kube-ps1)
 
 # User configuration
 
@@ -89,27 +92,26 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias vi=vim
+alias do_kubectl='kubectl --kubeconfig="$HOME/k8s-wplus-test-kubeconfig.yaml"'
 alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
 alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
+alias workon_wplus='minikube start -p minikube --vm-driver=kvm2 && eval $(minikube docker-env) && cd $HOME/data/workspace/java/wplus-ecomm && tmux'
 
-export PATH="/snap/bin:$HOME/.local/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$HOME/data/local/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 export JAVA_HOME="/home/data/tools/sdkman/candidates/java/current"
 export M2_HOME="/home/data/tools/sdkman/candidates/maven/current"
 export EDITOR=vim
 export WORKON_HOME=/home/data/venvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-#source /home/data/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export PATH="$JAVA_HOME/bin:$M2_HOME/bin:/home/data/tools/local/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin"
-
-[[ -s "/home/data/tools/rvm/scripts/rvm" ]] && source "/home/data/tools/rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="/home/data/tools/rvm/bin:$PATH" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.local/bin:$HOME/.yarn/bin"
 
 export NVM_DIR="/home/data/tools/nvm"
 [ -s $NVM_DIR/nvm.sh ] && source "$NVM_DIR/nvm.sh"
@@ -118,20 +120,26 @@ export NVM_DIR="/home/data/tools/nvm"
 export SDKMAN_DIR="/home/data/tools/sdkman"
 [[ -s "/home/data/tools/sdkman/bin/sdkman-init.sh" ]] && source "/home/data/tools/sdkman/bin/sdkman-init.sh"
 
-source /home/sahir/.phpbrew/bashrc
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/data/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/home/data/tools/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/data/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/data/tools/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Random cowsay with fortune
-#if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
-#    fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
-#fi
-
 if [ -x /usr/bin/screenfetch ]; then
     screenfetch
 fi
+powerline-daemon -q
+. $HOME/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
+# functions to run better bash inside docker
+function goinside(){
+    docker exec -it $1 bash -c "stty cols $COLUMNS rows $LINES && bash";
+}
+function _goinside(){
+    COMPREPLY=( $(docker ps --format "{{.Names}}" -f name=$2) );
+}
+complete -F _goinside goinside;
+
+source $HOME/.rvm/scripts/rvm
+export ELECTRON_TRASH=gio
