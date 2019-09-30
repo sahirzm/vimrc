@@ -136,3 +136,6 @@
 [submodule "bundle/editorconfig-vim.git"]
 	path = bundle/editorconfig-vim.git
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/vim-prettier"]
+	path = bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier

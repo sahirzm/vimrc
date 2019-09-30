@@ -96,35 +96,33 @@ alias do_kubectl='kubectl --kubeconfig="$HOME/k8s-wplus-test-kubeconfig.yaml"'
 alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
 alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
-alias workon_wplus='minikube start -p minikube --vm-driver=kvm2 && eval $(minikube docker-env) && cd $HOME/data/workspace/java/wplus-ecomm && tmux'
+alias workon_wplus='minikube start -p minikube --vm-driver=kvm2 && eval $(minikube docker-env) && cd $HOME/workspace/java/wplus-ecomm && tmux'
 
-export PATH="$HOME/data/local/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export PATH="$HOME/tools/local/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-export JAVA_HOME="/home/data/tools/sdkman/candidates/java/current"
-export M2_HOME="/home/data/tools/sdkman/candidates/maven/current"
+export SDKMAN_DIR="/home/sahir/.sdkman"
+export JAVA_HOME="$SDKMAN_DIR/candidates/java/current"
+export M2_HOME="$SDKMAN_DIR/candidates/maven/current"
 export EDITOR=vim
-export WORKON_HOME=/home/data/venvs
+export WORKON_HOME=/home/sahir/workspace/venvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source $HOME/.local/bin/virtualenvwrapper.sh
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export PATH="$JAVA_HOME/bin:$M2_HOME/bin:/home/data/tools/local/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin:$HOME/.yarn/bin"
+export PATH="$JAVA_HOME/bin:$M2_HOME/bin:$HOME/tools/local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin:`yarn global bin`"
 
-export NVM_DIR="/home/data/tools/nvm"
+export NVM_DIR="/home/sahir/.nvm"
 [ -s $NVM_DIR/nvm.sh ] && source "$NVM_DIR/nvm.sh"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/data/tools/sdkman"
-[[ -s "/home/data/tools/sdkman/bin/sdkman-init.sh" ]] && source "/home/data/tools/sdkman/bin/sdkman-init.sh"
-
+export CLOUDSDK_PYTHON="/usr/bin/python2.7"
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/data/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/home/data/tools/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/sahir/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/home/sahir/tools/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/data/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/data/tools/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/sahir/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/sahir/tools/google-cloud-sdk/completion.zsh.inc'; fi
 
 if [ -x /usr/bin/screenfetch ]; then
     screenfetch
@@ -143,3 +141,9 @@ complete -F _goinside goinside;
 
 source $HOME/.rvm/scripts/rvm
 export ELECTRON_TRASH=gio
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

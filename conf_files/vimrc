@@ -93,15 +93,12 @@ set t_Co=256
 if has("gui_running")
 	set guioptions=0
 	set guitablabel=%M\ %t
-	set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 12
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 14
 endif
 
 set background=dark
 " set background=light
-" colorscheme desert
-" colorscheme Tomorrow-Night-Eighties
 colorscheme gruvbox
-" colorscheme dracula
 " colorscheme solarized
 
 syntax on
@@ -217,11 +214,12 @@ au FileType xml,html,phtml,php,xhtml,js let b:delimitMate_matchpairs = "(:),[:],
 
 " indentLine
 " vertical line indentation
-let g:indentLine_enabled = 0
+let g:indentLine_enabled = 1
 let g:indentLine_color_term = 4
 " let g:indentLine_color_gui = '#A4E57E'
 let g:indentLine_char = '⎸'
-" set list lcs=tab:\|.trail:<
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = '#FF5F00'
 
 " YankRing
 let g:yankring_history_dir = '~/.vim/temp_dirs/'
@@ -239,17 +237,20 @@ let g:ctrlp_map = '<c-f>'
 map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|target\|dist'
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|target\|dist\|build'
 
 " Zencoding
 let g:user_emmet_mode='a'    "enable all function in all mode.
+
+let g:prettier#autoformat = 0
+let g:jsx_ext_required = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
 " Syntastic
 " Python
 let g:syntastic_python_checkers=['pylint']
 " Javascript
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 " Java
 let g:syntastic_java_checkstyle_classpath = [$HOME . '/.vim/temp_dirs']
@@ -310,20 +311,6 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" conceal characters for javascript
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-
-let g:jsx_ext_required = 1
-
 "buffer related mappings
 " This allows buffers to be hidden if you've modified a buffer.
 " This is almost a must if you wish to use buffers in this way.
@@ -362,3 +349,4 @@ autocmd FileType javascript.jsx noremap <buffer> <leader>bb :call JsxBeautify()<
 autocmd FileType html noremap <buffer> <leader>bb :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>bb :call CSSBeautify()<cr>
+ 
