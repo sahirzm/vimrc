@@ -1,0 +1,99 @@
+snippet foel "Form Element"
+<Col sm={24} md={8}>
+	<Form.Item label="$1">
+		{getFieldDecorator('$2', {
+			rules: [
+				{
+					required: true,
+					message: '$1 is required.'
+				}$4
+			]
+		})(<$3/>)}
+	</Form.Item>
+</Col>$5
+endsnippet
+
+snippet rform "Form for react"
+const { getFieldDecorator } = this.props.form;
+return (
+<div className={styles.form}>
+		<Form onSubmit={this.handleSubmit}>
+			$4
+			<Row gutter={24}>
+				<Col span={24}>
+					<Form.Item>
+						<Button type="primary" htmlType="submit">$1</Button>$2
+					</Form.Item>$3
+				</Col>
+			</Row>
+		</Form>
+	</div>
+)
+endsnippet
+
+
+snippet ysaga "Saga"
+function* $1() {
+	yield takeLatest($2, function*(action) {
+		try {
+			let $3 = yield call($4Service.$5, action.payload);
+			yield put($4Actions.$6($3));
+		} catch (err) {
+			yield put(apiErrorActions.handle(err));
+		}
+	});
+}
+endsnippet
+
+snippet imfa "Import font awesome"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+endsnippet
+
+snippet rcom "React component"
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Row, Col } from 'antd';
+import { withEventBus, withScreenLoader } from 'context';
+import styles from './$1.module.less';
+
+class $2 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      globalErrors: []
+    };
+    this.subscriptions = [];
+  }
+
+  componentWillMount() {
+    this.subscriptions.push(
+      this.props.eventBusSubscribe($4, action => {
+      })
+    );
+  }
+
+  componentWillUnmount() {
+    this.subscriptions.forEach(s => s.unsubscribe());
+  }
+
+  render() {
+    return (
+      <div className={styles.$3}>
+      </div>
+    );
+  }
+}
+
+const mapDispatchToProps = {
+};
+
+const mapStateToProps = (state, props) => {
+  return {
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withScreenLoader(withEventBus($2)));
+endsnippet
