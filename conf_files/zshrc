@@ -88,9 +88,9 @@ alias vim=nvim
 alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
 alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
-alias workon_wplus='minikube start -p minikube --vm-driver=kvm2 && eval $(minikube docker-env) && cd $HOME/workspace/java/wplus-ecomm && tmux'
+alias workon_wplus='minikube start -p minikube && eval $(minikube docker-env) && cd $HOME/workspace/java/wplus-ecomm && tmux'
 
-export PATH="$HOME/tools/local/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export PATH="$HOME/tools/local/bin:$HOME/.local/bin:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 export SDKMAN_DIR="$HOME/.sdkman"
 export JAVA_HOME="$SDKMAN_DIR/candidates/java/current"
@@ -139,3 +139,4 @@ export ELECTRON_TRASH=gio
 
 export FZF_DEFAULT_COMMAND='ag --type f'
 export ANDROID_HOME="$HOME/tools/Android/sdk/"
+export PATH=$ANDROID_HOME/platform-tools:$PATH

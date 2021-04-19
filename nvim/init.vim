@@ -8,8 +8,8 @@ noremap <Right> <NOP>
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'davidhalter/jedi-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-jedi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
@@ -42,6 +42,10 @@ Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag'
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}" coc extensions
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+Plug 'ianks/vim-tsx'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -92,6 +96,8 @@ syntax on
 filetype plugin on
 filetype indent on
 filetype plugin indent on
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -124,14 +130,14 @@ let g:user_emmet_settings = {
   \}
 
 " Enable autocomplete
-let g:deoplete#enable_at_startup = 1
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-set splitbelow
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-call deoplete#custom#option('auto_complete_delay', 500)
-
-" disable autocompletion, cause we use deoplete for completion
-let g:jedi#completions_enabled = 0
+" let g:deoplete#enable_at_startup = 1
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" set splitbelow
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" call deoplete#custom#option('auto_complete_delay', 500)
+" 
+" " disable autocompletion, cause we use deoplete for completion
+" let g:jedi#completions_enabled = 0
 
 " open the go-to function in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
@@ -291,6 +297,13 @@ let g:AutoPairsShortcutToggle = ''
 let g:AutoPairsShortcutFastWrap = ''
 let g:AutoPairsShortcutJump = ''
 let g:AutoPairsShortcutBackInsert = ''
+
+" coc
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " External dependencies required
 " pip3 install pynvim jedi yapf
