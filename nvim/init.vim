@@ -305,5 +305,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+set guifont=Source\ Code\ Pro\ Medium:h14
+set clipboard+=unnamedplus
+
+
 " External dependencies required
 " pip3 install pynvim jedi yapf
+

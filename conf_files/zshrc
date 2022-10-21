@@ -51,7 +51,7 @@ export UPDATE_ZSH_DAYS=30
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(emacs git docker git-flow gradle yarn kubectl minikube kube-ps1 kubetail)
+plugins=(aws git docker gradle yarn kubectl minikube kube-ps1 kubetail)
 
 # User configuration
 
@@ -89,6 +89,9 @@ alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
 alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias workon_wplus='minikube start -p minikube && eval $(minikube docker-env) && cd $HOME/workspace/java/wplus-ecomm && tmux'
+alias cdk='npx cdk'
+alias do_kubectl="doctl kubernetes cluster kubeconfig save f7fded74-b9ab-494e-b3a0-092a39335a22"
+alias rm="rm -i"
 
 export PATH="$HOME/tools/local/bin:$HOME/.local/bin:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
@@ -140,3 +143,4 @@ export ELECTRON_TRASH=gio
 export FZF_DEFAULT_COMMAND='ag --type f'
 export ANDROID_HOME="$HOME/tools/Android/sdk/"
 export PATH=$ANDROID_HOME/platform-tools:$PATH
+
