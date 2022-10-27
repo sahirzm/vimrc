@@ -20,6 +20,7 @@ Plug 'neomake/neomake'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/SimpylFold'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
@@ -146,7 +147,9 @@ let g:jedi#use_splits_not_buffers = "right"
 " call neomake#configure#automake('nrwi', 500)
 
 " Theme
-colorscheme gruvbox
+" colorscheme gruvbox
+let g:gruvbox_material_background = 'soft'
+colorscheme gruvbox-material
 set background=dark
 
 set ai "Auto indent
@@ -168,6 +171,7 @@ map k gk
 set laststatus=2
 
 " Format the status line
+let g:airline_powerline_fonts = 1
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " Remap VIM 0 to first non-blank character
@@ -306,9 +310,10 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 set guifont=Source\ Code\ Pro\ Medium:h14
-set clipboard+=unnamedplus
-
+" set clipboard+=unnamedplus
+set clipboard=unnamed
 
 " External dependencies required
 " pip3 install pynvim jedi yapf
+" pacman -Sy ag the_silver_searcher ripgrep
 
