@@ -5,9 +5,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="dpoggi"
+#ZSH_THEME="robbyrussell"
+# ZSH_THEME="dpoggi"
 #ZSH_THEME="agnoster"
+ZSH_THEME="dracula"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +52,7 @@ export UPDATE_ZSH_DAYS=30
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git docker gradle)
+plugins=(aws git docker gradle emacs)
 
 # User configuration
 
@@ -112,8 +113,8 @@ export PATH="$PATH:$HOME/tools/flutter/bin"
 if [ -x /usr/bin/screenfetch ]; then
     screenfetch
 fi
-powerline-daemon -q
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+# powerline-daemon -q
+#. /usr/share/powerline/bindings/zsh/powerline.zsh
 
 # functions to run better bash inside docker
 #function goinside(){
@@ -134,3 +135,7 @@ export ANDROID_HOME="$HOME/tools/Android/sdk/"
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+
+# Load rbenv automatically by appending
+eval "$(rbenv init - zsh)"

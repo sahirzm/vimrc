@@ -43,10 +43,11 @@ Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'alvan/vim-closetag'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}" coc extensions
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-java']
 Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -148,9 +149,10 @@ let g:jedi#use_splits_not_buffers = "right"
 
 " Theme
 " colorscheme gruvbox
-let g:gruvbox_material_background = 'soft'
-colorscheme gruvbox-material
+" let g:gruvbox_material_background = 'soft'
+" colorscheme gruvbox-material
 set background=dark
+colorscheme nord
 
 set ai "Auto indent
 set si "Smart indent
@@ -308,10 +310,10 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 set guifont=Source\ Code\ Pro\ Medium:h14
-" set clipboard+=unnamedplus
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " External dependencies required
 " pip3 install pynvim jedi yapf

@@ -1,45 +1,46 @@
 # Colors (Gruvbox Material Dark Medium)
 # clone git clone https://github.com/eendroroy/alacritty-theme.git ~/.alacritty-colorscheme
-import:
-  - $HOME/.alacritty-colorscheme/themes/grubbox_material.yml
 window:
   dimensions:
     columns: 140
     lines: 40
   padding:
-    x: 0
+    x: 5
     y: 0
   fullscreen: true
 draw_bold_text_with_bright_colors: true
 scrolling:
   history: 100000
 
-# Colors (Gruvbox Material Dark Medium)
+# Colors (Dracula)
 colors:
+  # Default colors
   primary:
-    background: '0x282828'
-    foreground: '0xdfbf8e'
+    background: "0x282a36"
+    foreground: "0xf8f8f2"
 
+  # Normal colors
   normal:
-    black:   '0x665c54'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xe78a4e'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    cyan:    '0x89b482'
-    white:   '0xdfbf8e'
+    black: "0x000000"
+    red: "0xff5555"
+    green: "0x50fa7b"
+    yellow: "0xf1fa8c"
+    blue: "0xbd93f9"
+    magenta: "0xff79c6"
+    cyan: "0x8be9fd"
+    white: "0xbbbbbb"
 
+  # Bright colors
   bright:
-    black:   '0x928374'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xe3a84e'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    cyan:    '0x89b482'
-    white:   '0xdfbf8e'
- 
+    black: "0x555555"
+    red: "0xff5555"
+    green: "0x50fa7b"
+    yellow: "0xf1fa8c"
+    blue: "0xcaa9fa"
+    magenta: "0xff79c6"
+    cyan: "0x8be9fd"
+    white: "0xffffff"
+
 # Font configuration (changes require restart)
 font:
   # The normal (roman) font face to use.
@@ -64,7 +65,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 14
+  size: 12
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -78,4 +79,3 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
