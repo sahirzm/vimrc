@@ -2,8 +2,8 @@
 # clone git clone https://github.com/eendroroy/alacritty-theme.git ~/.alacritty-colorscheme
 window:
   dimensions:
-    columns: 140
-    lines: 40
+    columns: 240
+    lines: 80
   padding:
     x: 5
     y: 0
@@ -45,24 +45,18 @@ colors:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Fira Mono # should be "Menlo" or something on macOS.
-    # family: Source Code Pro # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Regular
+    family: FiraCode Nerd Font
+    style: Regular
 
   # The bold font face
   bold:
-    family: Fira Mono # should be "Menlo" or something on macOS.
-    # family: Source Code Pro # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Bold
+    family: FiraCode Nerd Font
+    style: Bold
 
   # The italic font face
   italic:
-    family: Fira Mono # should be "Menlo" or something on macOS.
-    # family: Source Code Pro # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Italic
+    family: FiraCode Nerd Font
+    style: Italic
 
   # Point size of the font
   size: 12
@@ -79,3 +73,10 @@ font:
   glyph_offset:
     x: 0
     y: 0
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
