@@ -86,6 +86,11 @@
 (setq-default display-fill-column-indicator t)
 (setq-default display-fill-column-indicator-character 9474)
 
+;; required for twittering-mode on Arch Linux
+(setq twittering-cert-file "/etc/ssl/certs/ca-bundle.crt")
+
+;; rss feeds
+(setq rmh-elfeed-org-files (list (expand-file-name (concat doom-user-dir "etc/elfeed/file.org"))))
 
 ;; java lsp config
 (when (modulep! :lang java +lsp)
