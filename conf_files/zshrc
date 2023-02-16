@@ -95,7 +95,6 @@ source $ZSH/oh-my-zsh.sh
 alias vi=nvim
 alias vim=nvim
 # install LunarVim using - https://www.lunarvim.org/docs/installation
-alias nvim=lvim
 alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
 alias rmdockerim='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
