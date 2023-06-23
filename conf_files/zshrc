@@ -60,7 +60,7 @@ export UPDATE_ZSH_DAYS=30
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git docker gradle emacs)
+plugins=(aws git docker gradle)
 
 # User configuration
 
@@ -94,6 +94,7 @@ source $ZSH/oh-my-zsh.sh
 #
 alias vi=nvim
 alias vim=nvim
+alias emacs="emacsclient -nc"
 # install LunarVim using - https://www.lunarvim.org/docs/installation
 alias cls='tput cup 15 0'
 alias rmdockerps='docker rm $(docker ps -aq -f status=exited)'
@@ -108,7 +109,7 @@ export PATH="$HOME/tools/local/bin:$HOME/.local/bin:/snap/bin:/usr/local/sbin:/u
 export SDKMAN_DIR="$HOME/.sdkman"
 export JAVA_HOME="$SDKMAN_DIR/candidates/java/current"
 export M2_HOME="$SDKMAN_DIR/candidates/maven/current"
-export EDITOR=vim
+export EDITOR="emacsclient -c"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -136,12 +137,12 @@ fi
 
 export ELECTRON_TRASH=gio
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-
 export FZF_DEFAULT_COMMAND='ag --type f'
 export ANDROID_HOME="$HOME/tools/Android/sdk/"
 export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+export DENO_INSTALL="/home/sahir/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
@@ -151,3 +152,6 @@ eval "$(rbenv init - zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"

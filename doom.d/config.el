@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dark+)
+(setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -75,7 +75,6 @@
 ;; they are implemented.
 
 (setq
- dart-format-on-save t
  projectile-project-search-path '("~/workspace/" )
  +magit-hub-features t
 )
@@ -89,8 +88,14 @@
 ;; required for twittering-mode on Arch Linux
 (setq twittering-cert-file "/etc/ssl/certs/ca-bundle.crt")
 
+;; do not open treemacs in popup minibuffer
+(set-popup-rule! "^ ?\\*Treemacs" :ignore t)
+
 ;; rss feeds
 (setq rmh-elfeed-org-files (list (expand-file-name (concat doom-user-dir "etc/elfeed/file.org"))))
+
+;; lsp settings
+(setq +format-with-lsp nil)
 
 ;; java lsp config
 (when (modulep! :lang java +lsp)
@@ -109,3 +114,6 @@
           )
     )
   )
+
+;; dart lsp config
+(setq-default lsp-dart-line-length 120)
